@@ -38,10 +38,10 @@
           <p>Верстка на HTML и CSS <br> Разработка сайтов под ключ</p>
         </div>
       </div>
-      <a class="main-down wow bounceInLeft" data-wow-iteration="8s" href="#"><i class="icon-down"></i></a>
+      <a class="main-down slowly wow bounceInLeft" data-wow-iteration="8s" href="#portfolio"><i class="icon-down"></i></a>
     </div>
 <!--====================portfolio============================== -->
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="section-header wow bounceInRight" data-wow-iteration="8s">Портфолио</h2>
         <div class="row wow bounceInLeft" data-wow-iteration="8s">
@@ -121,6 +121,18 @@
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".slowly").on("click", function (event) {
+                event.preventDefault();
+                var id  = $(this).attr('href'),
+
+                     top = $(id).offset().top;
+
+                 $('body,html').animate({scrollTop: top}, 800);
+            });
+         });
     </script>
   </body>
 </html>
